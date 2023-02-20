@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>XYZ Sign Up</h2>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10 col-sm-12">
+            <div id="left"></div>
+            <div id="right">
+                <h5>Hey There! Sign up here...</h5>
+                <form [formGroup]="myForm" (ngSubmit)="register()">
+                    <div class="inp"><input type="text" formControlName="user" name="user" required  placeholder="Username" class="form-control"></div>
+                    <div class="warning" *ngIf="myForm.get('user')?.touched && myForm.get('user').invalid">Name is required</div>
+
+                    <div class="inp"><input type="email" required formControlName="email" name="email" placeholder="Email" class="form-control"></div>
+                    <div class="warning" pattern="^[a-z0-9.]+@[a-z0-9.-]+\.[a-z]{2,4}$" *ngIf="myForm.get('email')?.touched &&  myForm.get('email').invalid">Email is required</div>
+
+
+                    <div class="inp"><input type="password" required formControlName="password" name="password" placeholder="Password" class="form-control"></div>
+                    <div class="warning" *ngIf="myForm.get('password')?.touched &&  myForm.get('password').invalid">Password is required</div>
+
+                  <button class="btn btn-warning">Submit</button>
+                </form>
+            </div>
+        
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+
+</div>
+
