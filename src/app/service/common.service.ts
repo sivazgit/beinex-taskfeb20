@@ -27,4 +27,21 @@ export class CommonService {
     return userDetails;
   
   }
+
+  getCountries(){
+    return this.http.get('https://restcountries.com/v3.1/all');
+  }
+
+
+  getCountryName(name:string){
+    return this.http.get('https://restcountries.com/v3.1/name/'+name);
+  }
+
+  getCountryRegion(region:string){
+    return this.http.get('https://restcountries.com/v3.1/region/'+region);
+  }
+
+  getCountryLanguage(language:string){
+    return this.http.get('https://restcountries.com/v3.1/lang/'+language);
+  }
 }

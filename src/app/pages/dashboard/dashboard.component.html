@@ -8,8 +8,9 @@
     </div>
 
 
-    <div *ngif="viewOrHide">
-        <button>View Country Details</button>
+    
+    <button (click)="show()">View Country Details</button>
+    <div *ngIf="viewOrHide">
         <app-country-details></app-country-details>
     </div>
 </div>

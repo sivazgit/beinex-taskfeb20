@@ -9,13 +9,16 @@ import { CommonService } from 'src/app/service/common.service';
 export class DashboardComponent {
 
   public userDetails!:any;
-  public viewOrHide!:false;
+  public viewOrHide:boolean = false;
 
 constructor(private cs:CommonService){
   this.userDetails=this.cs.getData();
-  console.log(this.userDetails);
+  console.log(this.userDetails);  
+}
 
-  
+
+show(){
+this.viewOrHide = !this.viewOrHide;
 }
 
 
